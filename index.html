@@ -48,7 +48,7 @@
         .introduce-img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* 保持圖片比例不失真 */
+            object-fit: cover; 
             border-radius: 10px;
         }
         .clickable-image {
@@ -61,7 +61,7 @@
             transform: scale(1.05);
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
         }
-        }
+        
     </style>
 </head>
 
@@ -130,11 +130,11 @@
         <h2 class="text-center mb-4">自傳&履歷</h2>
         <div class="card p-4">
             <div class="row">
-                <!-- 標題單獨一行、靠左 -->
+                
                 <div class="col-12">
                     <h4 class="mb-3">◆大一自我介紹影片</h4>
                 </div>
-                <!-- 影片置中 -->
+               
                 <div class="col-12 d-flex justify-content-center mb-3">
                     <video id="intro-video" class="w-100" style="max-width: 480px; height: auto;" controls>
                         <source src="大一自我介紹影片.mp4" type="video/mp4">
@@ -157,14 +157,14 @@
         <h2 class="text-center mb-4">職涯測驗結果</h2>
         <div class="card p-4">
             <div class="row">
-                <!-- 左側：職業興趣探索 + 職場共通職能 -->
+                
                 <div class="col-md-6">
                     <h4>職業興趣探索</h4>
                     <p><strong>職業性格類型：</strong> 藝術型 (A)、社會型 (S)</p>
                     <p><strong>興趣領域：</strong> 建築營造、藝文與影音傳播、休閒與觀光旅遊、金融財務、醫療保健、個人及社會服務</p>
                     <a href="職業興趣探索診斷結果.pdf" class="btn btn-light mt-2" target="_blank" download>查看職業興趣測驗結果</a>
 
-                    <hr> <!-- 分隔線 -->
+                    <hr> 
 
                     <h4>職場共通職能</h4>
                     <p><strong>優勢能力：</strong> 人際互動 (5.0)、團隊合作 (5.0)、持續學習 (4.86)、問題解決 (4.83)、資訊科技應用 (4.88)</p>
@@ -172,20 +172,20 @@
                     <a href="職場共通職能診斷結果.pdf" class="btn btn-light mt-2" target="_blank" download>查看職場共通職能測驗結果</a>
                 </div>
 
-                <!-- 右側：興趣何倫碼 -->
+                
                 <div class="col-md-6 text d-flex flex-column align-items">
                     <h4>104生涯興趣測驗</h4>
                     <p><strong>興趣何倫碼:</strong> 藝術型 (A)、事務型 (C)</p>
                     <p><strong>診斷說明：</strong> 內心充滿想像力，多以文字、音樂、色彩等各種藝術創作來表達自己的感受。直覺敏銳，創作方式較為細膩，有次序感，喜歡獨立作業。做事認真，但有時會受情緒影響。</p>
                     
-                    <!-- 點擊小圖開啟 Modal -->
+                    
                     <img src="興趣何倫碼.jpg" alt="興趣何倫碼" class="profile-img mt-2 clickable-image"
                         data-bs-toggle="modal" data-bs-target="#imageModal">
                 </div>
                 </div>
                 </div>
 
-                <!-- Modal 彈出視窗 -->
+                
                 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
@@ -201,20 +201,20 @@
                 </div>
 
 
-                <!-- CSS 增強點擊感 -->
+               
                 <style>
                     .clickable-image {
                         max-width: 200px;
                         cursor: pointer;
-                        border: 3px solid #e8d5d4;  /* 加色邊框 */
-                        border-radius: 10px;  /* 圓角 */
-                        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  /* 陰影 */
-                        transition: transform 0.3s ease, box-shadow 0.3s ease;  /* 過渡效果 */
+                        border: 3px solid #e8d5d4;  
+                        border-radius: 10px;  
+                        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;  
                     }
 
                     .clickable-image:hover {
-                        transform: scale(1.1);  /* 滑鼠懸停時放大 */
-                        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);  /* 加強陰影 */
+                        transform: scale(1.1);  
+                        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);  
                     }
                 </style>
 
@@ -266,12 +266,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 <script>
-    // 嘗試自動播放音樂
+    
     document.addEventListener('DOMContentLoaded', function() {
         var audio = document.getElementById("bg-music");
         var introVideo = document.getElementById("intro-video");
 
-        // 嘗試播放，如果瀏覽器阻擋，則等待用戶互動
+        
         var playPromise = audio.play();
         if (playPromise !== undefined) {
             playPromise.catch(function(error) {
@@ -280,7 +280,7 @@
         }
     });
 
-    // 點擊頁面任意處後播放音樂
+    
     document.addEventListener('click', function() {
         var audio = document.getElementById("bg-music");
         if (audio.paused) {
@@ -294,10 +294,10 @@
 
     
 
-    // 設定音量
+    
     window.onload = function() {
         var audio = document.getElementById("bg-music");
-        audio.volume = 0.06;  // 設定音量
+        audio.volume = 0.06;  
     };
 
     
@@ -307,12 +307,12 @@
     var introVideo = document.getElementById("intro-video");
 
 
-    // 當影片播放時暫停背景音樂
+    
             introVideo.addEventListener("play", function () {
                 bgMusic.pause();
             });
 
-            // 當影片暫停或播放結束時恢復背景音樂
+            
             introVideo.addEventListener("pause", function () {
                 bgMusic.play();
             });
@@ -322,7 +322,7 @@
             });
         });
 
-    // 設定 "大一自我介紹影片" 音量
+    
 
         document.getElementById("intro-video").volume = 0.06;
 
